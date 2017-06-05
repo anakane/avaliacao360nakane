@@ -19,12 +19,12 @@ spring:
             enabled: false
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://localhost:5432/avaliacao360nakane
+        url: jdbc:postgresql://localhost:5432/avaliacao360chiote
         name:
-        username: avaliacao360nakane
+        username: avaliacao360chiote
         password:
     jpa:
-        database-platform: com.nakane.domain.util.FixedPostgreSQL82Dialect
+        database-platform: com.chiote.domain.util.FixedPostgreSQL82Dialect
         database: POSTGRESQL
         show-sql: false
         properties:
@@ -33,15 +33,21 @@ spring:
             hibernate.generate_statistics: false
             hibernate.javax.cache.provider: org.ehcache.jsr107.EhcacheCachingProvider
             hibernate.javax.cache.uri: ${spring.cache.jcache.config}
-            hibernate.cache.region.factory_class: com.nakane.config.jcache.SpringCacheRegionFactory
+            hibernate.cache.region.factory_class: com.chiote.config.jcache.SpringCacheRegionFactory
     cache:
         jcache:
             config: ehcache.xml
     mail:
-        host: localhost
-        port: 25
-        username:
-        password:
+        host: smtp.gmail.com
+        port: 587
+        username: avaliacao360chiote@gmail.com
+        password: feedback360
+        protocol: smtp
+        tls: true
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
+            ssl.trust: smtp.gmail.com
     thymeleaf:
         cache: true
 
@@ -67,15 +73,15 @@ jhipster:
         ehcache:
             maxBytesLocalHeap: 256M
     mail: # specific JHipster mail property, for standard properties see MailProperties
-        from: avaliacao360nakane@localhost
-        baseUrl: http://my-server-url-to-change # Modify according to your server's URL
+        from: avaliacao360chiote@gmail.com
+        baseUrl: https://avaliacao360chiote.mybluemix.net # Modify according to your server's URL
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
         graphite:
             enabled: false
             host: localhost
             port: 2003
-            prefix: avaliacao360nakane
+            prefix: avaliacao360chiote
         prometheus:
             enabled: false
             endpoint: /prometheusMetrics

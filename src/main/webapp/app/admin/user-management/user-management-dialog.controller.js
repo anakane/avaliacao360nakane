@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('avaliacao360NakaneApp')
+        .module('avaliacao360ChioteApp')
         .controller('UserManagementDialogController',UserManagementDialogController);
 
     UserManagementDialogController.$inject = ['$stateParams', '$uibModalInstance', 'entity', 'User', 'JhiLanguageService'];
@@ -10,7 +10,7 @@
     function UserManagementDialogController ($stateParams, $uibModalInstance, entity, User, JhiLanguageService) {
         var vm = this;
 
-        vm.authorities = ['ROLE_USER', 'ROLE_ADMIN'];
+        vm.authorities = ['ROLE_USER', 'ROLE_ADMIN', 'ROLE_LEADER', 'ROLE_MEMBER'];
         vm.clear = clear;
         vm.languages = null;
         vm.save = save;

@@ -1,8 +1,8 @@
-(function() {
+ (function() {
     'use strict';
 
     angular
-        .module('avaliacao360NakaneApp')
+        .module('avaliacao360ChioteApp')
         .factory('LoginService', LoginService);
 
     LoginService.$inject = ['$uibModal'];

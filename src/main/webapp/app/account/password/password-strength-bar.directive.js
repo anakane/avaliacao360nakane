@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('avaliacao360NakaneApp')
+        .module('avaliacao360ChioteApp')
         .directive('passwordStrengthBar', passwordStrengthBar);
 
     function passwordStrengthBar () {

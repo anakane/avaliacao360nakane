@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "avaliacaoModelo",
+            "otherEntityName": "avaliacaoModelo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "assunto",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "texto",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "900"
+        }
+    ],
+    "changelogDate": "20170505200406",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "pergunta_layout",
+    "pagination": "no"
+}

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('avaliacao360NakaneApp')
+        .module('avaliacao360ChioteApp')
         .factory('DateUtils', DateUtils);
 
     DateUtils.$inject = ['$filter'];

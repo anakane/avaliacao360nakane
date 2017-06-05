@@ -1,12 +1,12 @@
 version: '2'
 services:
-    avaliacao360nakane-postgresql:
-        container_name: avaliacao360nakane-postgresql
+    avaliacao360chiote-postgresql:
+        container_name: avaliacao360chiote-postgresql
         image: postgres:9.5.4
         # volumes:
-        #     - ~/volumes/jhipster/avaliacao360nakane/postgresql/:/var/lib/postgresql/
+        #     - ~/volumes/jhipster/avaliacao360chiote/postgresql/:/var/lib/postgresql/
         environment:
-            - POSTGRES_USER=avaliacao360nakane
+            - POSTGRES_USER=avaliacao360chiote
             - POSTGRES_PASSWORD=
         ports:
             - 5432:5432

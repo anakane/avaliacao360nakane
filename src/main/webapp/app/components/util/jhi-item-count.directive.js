@@ -15,6 +15,6 @@
     };
 
     angular
-        .module('avaliacao360NakaneApp')
+        .module('avaliacao360ChioteApp')
         .component('jhiItemCount', jhiItemCount);
 })();

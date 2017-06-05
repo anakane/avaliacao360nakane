@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="avaliacao360ChioteApp.perguntaLayout.detail.title">Pergunta Layout</span> {{vm.perguntaLayout.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="avaliacao360ChioteApp.perguntaLayout.assunto">Assunto</span></dt>
+        <dd>
+            <span>{{vm.perguntaLayout.assunto}}</span>
+        </dd>
+        <dt><span data-translate="avaliacao360ChioteApp.perguntaLayout.texto">Texto</span></dt>
+        <dd>
+            <span>{{vm.perguntaLayout.texto}}</span>
+        </dd>
+        <dt><span data-translate="avaliacao360ChioteApp.perguntaLayout.avaliacaoModelo">Avaliacao Modelo</span></dt>
+        <dd>
+            <a ui-sref="avaliacao-modelo-detail({id:vm.perguntaLayout.avaliacaoModelo.id})">{{vm.perguntaLayout.avaliacaoModelo.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="pergunta-layout-detail.edit({id:vm.perguntaLayout.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

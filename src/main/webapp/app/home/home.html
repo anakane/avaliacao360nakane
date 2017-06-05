@@ -1,41 +1,238 @@
 <div ng-cloak>
-    <div class="row">
-        <div class="col-md-4">
-            <span class="hipster img-responsive img-rounded"></span>
-        </div>
-        <div class="col-md-8">
-            <h1 data-translate="home.title">Welcome, Java Hipster!</h1>
+
+    <div ng-switch="vm.isAuthenticated()">
+
+        <div ng-switch-when="false">
+            <span class="feedback pull-left"></span>
+
+            <h1 data-translate="home.title">Welcome!</h1>
             <p class="lead" data-translate="home.subtitle">This is your homepage</p>
 
-            <div ng-switch="vm.isAuthenticated()">
-                <div class="alert alert-success" ng-switch-when="true" data-translate="home.logged.message" translate-values="{username: '{{vm.account.login}}'}">
-                    You are logged in as user "{{vm.account.login}}".
-                </div>
+            <hr>
 
-                <div class="alert alert-warning" ng-switch-when="false" data-translate="global.messages.info.authenticated" translate-compile>
-                    If you want to <a class="alert-link" href="" ng-click="vm.login()">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
-                </div>
+            <p data-translate="home.description.paragraph1">Paragraph1 ...</p>
+            <p data-translate="home.description.paragraph2">Paragraph2 ...</p>
+            <p data-translate="home.description.paragraph3">Paragraph3 ...</p>
+            <p data-translate="home.description.paragraph4">Paragraph4 ...</p>
+            <p data-translate="home.description.paragraph5">Paragraph5 ...</p>
+            <p data-translate="home.description.paragraph6">Paragraph6 ...</p>
 
-                <div class="alert alert-warning" ng-switch-when="false" data-translate="global.messages.info.register" translate-compile>
-                    You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
-                </div>
-            </div>
-
-            <p data-translate="home.question">
-                If you have any question on JHipster:
-            </p>
-
-            <ul>
-                <li><a href="http://jhipster.github.io/" target="_blank" data-translate="home.link.homepage">JHipster homepage</a></li>
-                <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" data-translate="home.link.stackoverflow">JHipster on Stack Overflow</a></li>
-                <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" data-translate="home.link.bugtracker">JHipster bug tracker</a></li>
-                <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" data-translate="home.link.chat">JHipster public chat room</a></li>
-                <li><a href="https://twitter.com/java_hipster" target="_blank"  data-translate="home.link.follow">follow @java_hipster on Twitter</a></li>
-            </ul>
-
-            <p>
-             <span data-translate="home.like">If you like JHipster, don't forget to give us a star on </span>&nbsp;<a href="https://github.com/jhipster/generator-jhipster" target="_blank" data-translate="home.github">Github</a>!
+            <p data-translate="global.messages.info.register" translate-compile>
+                You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
             </p>
         </div>
+
+        <div ng-switch-when="true" has-authority="ROLE_ADMIN">
+
+            <p data-translate="home.logged.message" translate-values="{username: '{{vm.account.login}}'}">
+                You are logged in as user "{{vm.account.login}}".
+            </p>
+
+        </div>
+
+
+        <div ng-switch-when="true" has-authority="ROLE_MEMBER">
+
+            <!--
+            <h1>apresentar resultados</h1>
+
+            <h2>lista de avaliacoes para realizar</h2>
+
+            <p data-translate="home.logged.message" translate-values="{username: '{{vm.account.login}}'}">
+                You are logged in as user "{{vm.account.login}}".
+            </p>
+            -->
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="rating-block">
+                            <h4>Average user rating</h4>
+                            <h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
+                            <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <h4>Rating breakdown</h4>
+                        <div class="pull-left">
+                            <div class="pull-left" style="width:35px; line-height:1;">
+                                <div style="height:9px; margin:5px 0;">5 <span class="glyphicon glyphicon-star"></span></div>
+                            </div>
+                            <div class="pull-left" style="width:180px;">
+                                <div class="progress" style="height:9px; margin:8px 0;">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
+                                        <span class="sr-only">80% Complete (danger)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pull-right" style="margin-left:10px;">1</div>
+                        </div>
+                        <div class="pull-left">
+                            <div class="pull-left" style="width:35px; line-height:1;">
+                                <div style="height:9px; margin:5px 0;">4 <span class="glyphicon glyphicon-star"></span></div>
+                            </div>
+                            <div class="pull-left" style="width:180px;">
+                                <div class="progress" style="height:9px; margin:8px 0;">
+                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
+                                        <span class="sr-only">80% Complete (danger)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pull-right" style="margin-left:10px;">1</div>
+                        </div>
+                        <div class="pull-left">
+                            <div class="pull-left" style="width:35px; line-height:1;">
+                                <div style="height:9px; margin:5px 0;">3 <span class="glyphicon glyphicon-star"></span></div>
+                            </div>
+                            <div class="pull-left" style="width:180px;">
+                                <div class="progress" style="height:9px; margin:8px 0;">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
+                                        <span class="sr-only">80% Complete (danger)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pull-right" style="margin-left:10px;">0</div>
+                        </div>
+                        <div class="pull-left">
+                            <div class="pull-left" style="width:35px; line-height:1;">
+                                <div style="height:9px; margin:5px 0;">2 <span class="glyphicon glyphicon-star"></span></div>
+                            </div>
+                            <div class="pull-left" style="width:180px;">
+                                <div class="progress" style="height:9px; margin:8px 0;">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 40%">
+                                        <span class="sr-only">80% Complete (danger)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pull-right" style="margin-left:10px;">0</div>
+                        </div>
+                        <div class="pull-left">
+                            <div class="pull-left" style="width:35px; line-height:1;">
+                                <div style="height:9px; margin:5px 0;">1 <span class="glyphicon glyphicon-star"></span></div>
+                            </div>
+                            <div class="pull-left" style="width:180px;">
+                                <div class="progress" style="height:9px; margin:8px 0;">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 20%">
+                                        <span class="sr-only">80% Complete (danger)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pull-right" style="margin-left:10px;">0</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-7">
+                        <hr/>
+                        <div class="review-block">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+                                    <div class="review-block-name"><a href="#">nktailor</a></div>
+                                    <div class="review-block-date">January 29, 2016<br/>1 day ago</div>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="review-block-rate">
+                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                    <div class="review-block-title">this was nice in buy</div>
+                                    <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+                                    <div class="review-block-name"><a href="#">nktailor</a></div>
+                                    <div class="review-block-date">January 29, 2016<br/>1 day ago</div>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="review-block-rate">
+                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                    <div class="review-block-title">this was nice in buy</div>
+                                    <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+                                    <div class="review-block-name"><a href="#">nktailor</a></div>
+                                    <div class="review-block-date">January 29, 2016<br/>1 day ago</div>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="review-block-rate">
+                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                    <div class="review-block-title">this was nice in buy</div>
+                                    <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
     </div>
 </div>

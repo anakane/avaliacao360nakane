@@ -13,17 +13,17 @@
 
 spring:
     application:
-        name: avaliacao360nakane
+        name: avaliacao360chiote
     jackson:
         serialization.write_dates_as_timestamps: false
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:mem:avaliacao360nakane;DB_CLOSE_DELAY=-1
+        url: jdbc:h2:mem:avaliacao360chiote;DB_CLOSE_DELAY=-1
         name:
         username:
         password:
     jpa:
-        database-platform: com.nakane.domain.util.FixedH2Dialect
+        database-platform: com.chiote.domain.util.FixedH2Dialect
         database: H2
         open-in-view: false
         show-sql: true
@@ -68,15 +68,15 @@ jhipster:
     security:
         authentication:
             oauth:
-                clientid: avaliacao360nakaneapp
+                clientid: avaliacao360chioteapp
                 secret: my-secret-token-to-change-in-production
                 # Token is valid 30 minutes
                 tokenValidityInSeconds: 1800
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
     swagger:
-        title: avaliacao360nakane API
-        description: avaliacao360nakane API documentation
+        title: avaliacao360chiote API
+        description: avaliacao360chiote API documentation
         version: 0.0.1
         termsOfServiceUrl:
         contactName:

@@ -10,16 +10,16 @@
         <heap>100</heap>
     </cache-template>
 
-    <cache alias="com.nakane.domain.User" uses-template="simple"/>
+    <cache alias="com.chiote.domain.User" uses-template="simple"/>
 
-    <cache alias="com.nakane.domain.Authority" uses-template="simple"/>
+    <cache alias="com.chiote.domain.Authority" uses-template="simple"/>
 
-    <cache alias="com.nakane.domain.User.authorities" uses-template="simple"/>
+    <cache alias="com.chiote.domain.User.authorities" uses-template="simple"/>
 
-    <cache alias="com.nakane.domain.PersistentToken" uses-template="simple"/>
+    <cache alias="com.chiote.domain.PersistentToken" uses-template="simple"/>
 
-    <cache alias="com.nakane.domain.User.persistentTokens" uses-template="simple"/>
+    <cache alias="com.chiote.domain.User.persistentTokens" uses-template="simple"/>
 
-    <cache alias="com.nakane.domain.PersistentAuditEvent" uses-template="simple"/>
+    <cache alias="com.chiote.domain.PersistentAuditEvent" uses-template="simple"/>
 
 </config>

@@ -1,7 +1,7 @@
 {
-  "name": "avaliacao-360-nakane",
+  "name": "avaliacao-360-chiote",
   "version": "0.0.0",
-  "description": "Description for avaliacao360nakane",
+  "description": "Description for avaliacao360chiote",
   "private": true,
   "cacheDirectories": [
     "node_modules",

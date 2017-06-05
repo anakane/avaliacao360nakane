@@ -10,15 +10,41 @@
         <heap>100</heap>
     </cache-template>
 
-    <cache alias="com.nakane.domain.User" uses-template="simple"/>
+    <cache alias="com.chiote.domain.User" uses-template="simple"/>
 
-    <cache alias="com.nakane.domain.Authority" uses-template="simple"/>
+    <cache alias="com.chiote.domain.Authority" uses-template="simple"/>
 
-    <cache alias="com.nakane.domain.User.authorities" uses-template="simple"/>
+    <cache alias="com.chiote.domain.User.authorities" uses-template="simple"/>
 
-    <cache alias="com.nakane.domain.PersistentToken" uses-template="simple"/>
+    <cache alias="com.chiote.domain.PersistentToken" uses-template="simple"/>
 
-    <cache alias="com.nakane.domain.User.persistentTokens" uses-template="simple"/>
+    <cache alias="com.chiote.domain.User.persistentTokens" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.Equipe" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.Equipe.membros" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.Pergunta" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.AvaliacaoModelo" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.AvaliacaoModelo.perguntas" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.Avaliacao" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.Avaliacao.respostas" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.Resposta" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.AvaliacaoControle" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.AvaliacaoControle.avaliacaoModelos" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.PerguntaLayout" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.AvaliacaoModelo.perguntaLayouts" uses-template="simple"/>
+
+    <cache alias="com.chiote.domain.AvaliacaoControle.perguntas" uses-template="simple"/>
 
     <!-- jhipster-needle-ehcache-add-entry -->
 </config>

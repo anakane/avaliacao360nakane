@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('avaliacao360NakaneApp')
+        .module('avaliacao360ChioteApp')
         .factory('AuthServerProvider', AuthServerProvider);
 
     AuthServerProvider.$inject = ['$http', '$localStorage', 'Base64'];
@@ -24,13 +24,13 @@
         function login (credentials) {
             var data = 'username=' +  encodeURIComponent(credentials.username) + '&password=' +
                 encodeURIComponent(credentials.password) + '&grant_type=password&scope=read%20write&' +
-                'client_secret=my-secret-token-to-change-in-production&client_id=avaliacao360nakaneapp';
+                'client_secret=my-secret-token-to-change-in-production&client_id=avaliacao360chioteapp';
 
             return $http.post('oauth/token', data, {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                     'Accept': 'application/json',
-                    'Authorization': 'Basic ' + Base64.encode('avaliacao360nakaneapp' + ':' + 'my-secret-token-to-change-in-production')
+                    'Authorization': 'Basic ' + Base64.encode('avaliacao360chioteapp' + ':' + 'my-secret-token-to-change-in-production')
                 }
             }).success(authSucess);
 

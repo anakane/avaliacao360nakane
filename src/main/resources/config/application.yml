@@ -18,7 +18,7 @@ management:
             enabled: false # When using the MailService, configure an SMTP server and set this to true
 spring:
     application:
-        name: avaliacao360nakane
+        name: avaliacao360chiote
     profiles:
         # The commented value for `active` can be replaced with valid Spring profiles to load.
         # Otherwise, it will be filled in by gradle when building the WAR file
@@ -44,7 +44,9 @@ spring:
 security:
     basic:
         enabled: false
-
+    oauth2:
+        resource:
+            filter-order: 3
 server:
     session:
         cookie:
@@ -59,6 +61,13 @@ jhipster:
         corePoolSize: 2
         maxPoolSize: 50
         queueCapacity: 10000
+    security:
+        authentication:
+            oauth:
+                client-id: avaliacao360chioteapp
+                secret: my-secret-token-to-change-in-production
+                # Token is valid 30 minutes
+                token-validity-in-seconds: 1800
     #cors: #By default CORS are not enabled. Uncomment to enable.
         #allowed-origins: "*"
         #allowed-methods: GET, PUT, POST, DELETE, OPTIONS
@@ -67,10 +76,10 @@ jhipster:
         #allow-credentials: true
         #max-age: 1800
     mail:
-        from: avaliacao360nakane@localhost
+        from: avaliacao360chiote@localhost
     swagger:
-        title: avaliacao360nakane API
-        description: avaliacao360nakane API documentation
+        title: avaliacao360chiote API
+        description: avaliacao360chiote API documentation
         version: 0.0.1
         termsOfServiceUrl:
         contactName:
